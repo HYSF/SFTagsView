@@ -16,6 +16,8 @@
 		48291C231F4C1EAB000F216F /* SFYJTagsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48291C221F4C1EAB000F216F /* SFYJTagsView.m */; };
 		48291C271F4C26A2000F216F /* UICollectionViewLeftAlignedLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 48291C261F4C26A2000F216F /* UICollectionViewLeftAlignedLayout.m */; };
 		48291C2D1F4C3C06000F216F /* SFYJViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48291C2C1F4C3C06000F216F /* SFYJViewCell.m */; };
+		B08791771F5E519400FFD920 /* guanbi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B08791751F5E519400FFD920 /* guanbi@2x.png */; };
+		B08791781F5E519400FFD920 /* guanbi@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B08791761F5E519400FFD920 /* guanbi@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		48291C261F4C26A2000F216F /* UICollectionViewLeftAlignedLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICollectionViewLeftAlignedLayout.m; sourceTree = "<group>"; };
 		48291C2B1F4C3C06000F216F /* SFYJViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFYJViewCell.h; sourceTree = "<group>"; };
 		48291C2C1F4C3C06000F216F /* SFYJViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFYJViewCell.m; sourceTree = "<group>"; };
+		B08791751F5E519400FFD920 /* guanbi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guanbi@2x.png"; sourceTree = "<group>"; };
+		B08791761F5E519400FFD920 /* guanbi@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guanbi@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,8 @@
 				48291C221F4C1EAB000F216F /* SFYJTagsView.m */,
 				48291C2B1F4C3C06000F216F /* SFYJViewCell.h */,
 				48291C2C1F4C3C06000F216F /* SFYJViewCell.m */,
+				B08791751F5E519400FFD920 /* guanbi@2x.png */,
+				B08791761F5E519400FFD920 /* guanbi@3x.png */,
 				4826B64D1F386D3C00DC0AB4 /* Main.storyboard */,
 				4826B6501F386D3C00DC0AB4 /* Assets.xcassets */,
 				4826B6521F386D3C00DC0AB4 /* LaunchScreen.storyboard */,
@@ -161,6 +167,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B08791771F5E519400FFD920 /* guanbi@2x.png in Resources */,
+				B08791781F5E519400FFD920 /* guanbi@3x.png in Resources */,
 				4826B6541F386D3C00DC0AB4 /* LaunchScreen.storyboard in Resources */,
 				4826B6511F386D3C00DC0AB4 /* Assets.xcassets in Resources */,
 				4826B64F1F386D3C00DC0AB4 /* Main.storyboard in Resources */,

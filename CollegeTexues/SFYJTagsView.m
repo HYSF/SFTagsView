@@ -61,9 +61,11 @@
     _layout = [[UICollectionViewLeftAlignedLayout alloc]init];
     _layout.scrollDirection = UICollectionViewScrollDirectionVertical;
     _collectionView  = [[UICollectionView alloc]initWithFrame:self.bounds collectionViewLayout:_layout];
-    _collectionView.backgroundColor = [UIColor redColor];
     _collectionView.delegate = self;
     _collectionView.dataSource = self;
+    _collectionView.showsVerticalScrollIndicator = NO;
+    _collectionView.showsHorizontalScrollIndicator = NO;
+    _collectionView.backgroundColor = [UIColor whiteColor];
     [self addSubview:_collectionView];
     
     [_collectionView registerClass:[SFYJViewCell class] forCellWithReuseIdentifier:@"SFYJViewCell"];
@@ -84,6 +86,13 @@
     
 }
 
+- (void)setDataSource:(NSMutableArray *)dataSource
+{
+    _dataSource = dataSource;
+    
+    [self.collectionView reloadData];
+}
+
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
@@ -101,8 +110,7 @@
     
     cell.titleLabel.text = self.dataSource[indexPath.item];
     cell.delegate = self;
-    cell.removeHeight = removingHeight;
-    cell.backgroundColor = [UIColor purpleColor];
+    cell.removeHeight = [self getRemovingHeight];
     return cell;
 }
 
@@ -146,8 +154,8 @@
     }
     
     if (self.layoutDirections == UICollectionViewScrollDirectionVertical) {
-        if (rectSize.width > (self.bounds.size.width - [self getLeadingAndTrailingPadding] * 2)) {
-            rectSize.width = self.bounds.size.width - [self getLeadingAndTrailingPadding] * 2;
+        if (rectSize.width > (self.bounds.size.width - [self getLeadingAndTrailingPadding] * 2 + [self getRemovingHeight]/2.0)) {
+            rectSize.width = self.bounds.size.width - [self getLeadingAndTrailingPadding] * 2 + [self getRemovingHeight]/2.0;
         }
     }
     
@@ -157,7 +165,7 @@
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
-    return UIEdgeInsetsMake([self getTopAndBottomPadding] - [self getRemovingHeight]/2.0 >= 0 ?: 0, [self getLeadingAndTrailingPadding], [self getTopAndBottomPadding] + [self getRemovingHeight]/2.0, [self getLeadingAndTrailingPadding] + [self getRemovingHeight]/2.0);
+    return UIEdgeInsetsMake([self getTopAndBottomPadding] - [self getRemovingHeight]/2.0 >= 0 ?: 0, [self getLeadingAndTrailingPadding], [self getTopAndBottomPadding] + [self getRemovingHeight]/2.0, [self getLeadingAndTrailingPadding] - [self getRemovingHeight]/2.0);
 }
 
 

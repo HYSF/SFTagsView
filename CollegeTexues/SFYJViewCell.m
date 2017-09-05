@@ -23,20 +23,26 @@
     _backImageView = [[UIImageView alloc]initWithFrame:self.bounds];
     [self addSubview:_backImageView];
     
-    _removeHeight = 15;
+    _removeHeight = 10;
     
     _titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, _removeHeight/2.0, self.bounds.size.width-_removeHeight/2.0, self.bounds.size.height-_removeHeight/2.0)];
     _titleLabel.font = [UIFont systemFontOfSize:13.0f];
     _titleLabel.textAlignment = NSTextAlignmentCenter;
-    _titleLabel.backgroundColor = [UIColor orangeColor];
+    _titleLabel.backgroundColor = [UIColor whiteColor];
+    _titleLabel.layer.borderWidth = 1.0f;
+    _titleLabel.layer.borderColor = [UIColor grayColor].CGColor;
+    _titleLabel.layer.cornerRadius = 3.0f;
+    _titleLabel.clipsToBounds = YES;
     [self addSubview:_titleLabel];
     
     _removeBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, _removeHeight, _removeHeight)];
     _removeBtn.center = CGPointMake(self.titleLabel.bounds.size.width , _removeHeight/2.0);
-    _removeBtn.backgroundColor = [UIColor blueColor];
+    [_removeBtn setImage:[UIImage imageNamed:@"guanbi"] forState:UIControlStateNormal];
+    _removeBtn.layer.borderWidth = 0.6;
+    _removeBtn.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    [_removeBtn setImageEdgeInsets:UIEdgeInsetsMake(3, 3, 3, 3)];
     [self addSubview:_removeBtn];
     
-    self.backImageView.backgroundColor = [UIColor redColor];
     self.titleLabel.textColor = [UIColor blackColor];
     [self.removeBtn addTarget:self action:@selector(removeAction:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -46,7 +52,8 @@
 {
     _removeHeight = removeHeight;
     
-    
+    self.removeBtn.frame = CGRectMake(0, 0, _removeHeight, _removeHeight);
+    self.removeBtn.center = CGPointMake(self.titleLabel.bounds.size.width , _removeHeight/2.0);
 }
 
 - (void)layoutSubviews
